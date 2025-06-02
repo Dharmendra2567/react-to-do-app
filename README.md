@@ -1,7 +1,8 @@
 
 ---
 
-```markdown
+---
+
 # 📝 React ToDo App
 
 This is a fully functional **Task Management Web App** built using **ReactJS** and **Redux**. It enables users to add, update, delete, search, filter, and sort tasks with persistent data saved in **localStorage**. This app also includes real-time input validation and dynamic dropdown actions.
@@ -25,7 +26,10 @@ This is a fully functional **Task Management Web App** built using **ReactJS** a
 - 🧠 Intelligent validation to avoid empty or invalid task names.
 - 💾 Persistent data using `localStorage`.
 
+---
+
 ## 🖼️ Screenshots
+---
 
 > Folder path: `screenshot/`
 
@@ -66,27 +70,6 @@ This is a fully functional **Task Management Web App** built using **ReactJS** a
 
 ````
 
----
-
-## 🧪 Task Input Validation
-
-- Minimum 2 alphabetic characters only
-- No numbers or special symbols allowed
-
-```js
-export const validateInput = (name) => /^[A-Za-z]{2,}$/.test(name);
-````
-
-### Feedback for Invalid Input:
-
-```jsx
-{isInvalid && (
-  <div className="error-text-input">Please enter a valid task name (at least 2 alphabetic characters).</div>
-)}
-```
-
----
-
 ## 🧠 Technologies Used
 
 * ReactJS
@@ -102,12 +85,12 @@ export const validateInput = (name) => /^[A-Za-z]{2,}$/.test(name);
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/task-manager-app.git
+   git clone https://github.com/Dharmendra2567/react-to-do-app
    ```
 2. Navigate into the project folder:
 
    ```
-   cd task-manager-app
+   cd react-to-do-app
    ```
 3. Install dependencies:
 
