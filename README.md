@@ -1,70 +1,130 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+```markdown
+# 📝 React ToDo App
 
-In the project directory, you can run:
+This is a fully functional **Task Management Web App** built using **ReactJS** and **Redux**. It enables users to add, update, delete, search, filter, and sort tasks with persistent data saved in **localStorage**. This app also includes real-time input validation and dynamic dropdown actions.
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ Add new tasks with priority selection.
+- ✏️ Edit and update tasks with pre-filled forms.
+- ❌ Remove tasks with instant update and persistence.
+- 🔄 Toggle task status between **Pending** and **Completed**.
+- 🔍 Search tasks by name in real-time.
+- 🔃 Sort tasks by:
+  - Task name
+  - Newest first
+  - Oldest first
+- 📂 Filter tasks by:
+  - Completed
+  - Pending
+  - High Priority
+  - Low Priority
+- 🧠 Intelligent validation to avoid empty or invalid task names.
+- 💾 Persistent data using `localStorage`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🖼️ Screenshots
 
-### `npm test`
+> Folder path: `screenshot/`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📊 Filter and Sorting
+![Filter and Sorting](screenshot/filterandsorting.png)
 
-### `npm run build`
+### 🔎 Search Functionality
+![Search](screenshot/search.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔁 Update Task
+![Update Task](screenshot/updateTask.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🗂️ My Tasks View
+![My Task](screenshot/mytask.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ❗Validation Error
+![Validation Error](screenshot/validationError.png)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Folder Structure (Important Parts)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+/src
+├── components/
+│   ├── TaskForm.jsx         # Form to add/edit tasks
+│   ├── TaskList.jsx         # Task listing component
+│   └── FilterSortPanel.jsx  # Filtering & sorting dropdowns
+├── redux/
+│   ├── action.js            # Redux actions (add, remove, update, filter)
+│   ├── reducer.js           # Reducer handling task state
+│   └── store.js             # Configured Redux store
+├── utils/
+│   └── validation.js        # Task name input validation
+├── App.js
+└── index.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+````
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧪 Task Input Validation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Minimum 2 alphabetic characters only
+- No numbers or special symbols allowed
 
-### Code Splitting
+```js
+export const validateInput = (name) => /^[A-Za-z]{2,}$/.test(name);
+````
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Feedback for Invalid Input:
 
-### Analyzing the Bundle Size
+```jsx
+{isInvalid && (
+  <div className="error-text-input">Please enter a valid task name (at least 2 alphabetic characters).</div>
+)}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🧠 Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* ReactJS
+* Redux Toolkit
+* JavaScript (ES6)
+* HTML/CSS (Bootstrap & Custom)
+* LocalStorage API
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📌 How to Run the Project
 
-### Deployment
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```
+   git clone https://github.com/your-username/task-manager-app.git
+   ```
+2. Navigate into the project folder:
 
-### `npm run build` fails to minify
+   ```
+   cd task-manager-app
+   ```
+3. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```
+   npm install
+   ```
+4. Start the development server:
+
+   ```
+   npm start
+   ```
+
+---
+
+## 📧 Author
+
+**Dharmendra Sah**
+🚀 Frontend Developer | 📚 Lifelong Learner
+
+---
