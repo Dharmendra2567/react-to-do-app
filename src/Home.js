@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addNewTask, filterTasks, handleUpdateTask, removeTask, searchTask, sortTasks, toggleTaskStatus } from './action';
+import {  filterTasks, handleUpdateTask, removeTask, searchTask, sortTasks, toggleTaskStatus } from './action';
 import { useDispatch, useSelector } from 'react-redux';
 import AddTaskSection from './AddTaskSection';
 
