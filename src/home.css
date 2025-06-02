@@ -1,0 +1,111 @@
+.custom-btn{
+    border: 1px solid blue;
+    border-radius: 10px;
+    background-color: rgb(143, 175, 186);
+}
+.custom-bg{
+  background-color: rgb(126, 155, 164);
+}
+.custom-input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 40px 10px 15px; /* leave space for icon */
+  background-color: #f1f3f5;
+  font-size: 14px;
+  transition: box-shadow 0.4s ease-in-out;
+  outline: none;
+}
+
+.custom-input::placeholder {
+  color: #868e96;
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 3px 3px rgba(0, 123, 255, 0.25); /* blue glow */
+  background-color: #ffffff;
+}
+
+.card {
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.25); /* blue glow */
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button{
+    border: none;
+    padding: 2px;
+}
+.custom-dropdown{
+    position: absolute;
+    right: 0;
+    display: block;
+    background-color: lightgrey;
+    z-index: 10;
+}
+.custom-dropdown ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.custom-dropdown li {
+  display: block; /* Make it span full width */
+  padding: 3px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid black;
+}
+
+.custom-dropdown li:hover {
+  background-color: #f1f1f1; /* Light grey background on hover */
+}
+
+
+.center-button {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  background-color:rgb(126, 155, 164);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+  .filter-control, .sort-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  .filter-control select, .sort-control select {
+    padding: 0.5rem;
+    white-space: nowrap;
+
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+  }
+
+  .error-text-input{
+    color: rgb(163, 11, 11);
+    font-size: 14px;
+    text-align: start;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+  }
