@@ -84,7 +84,7 @@ const Home = () => {
                         displayedTask.length > 0 &&
                         <h6 className='text-start'>Today</h6>
                     }
-                    {displayedTask == 0 &&
+                    {displayedTask.length === 0 &&
                         <h6 className='text-center'>No Task Added </h6>
                     }
 
