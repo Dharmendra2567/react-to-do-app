@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import {  filterTasks, handleUpdateTask, removeTask, searchTask, sortTasks, toggleTaskStatus } from './action';
+import { filterTasks, handleUpdateTask, removeTask, searchTask, sortTasks, toggleTaskStatus } from './action';
 import { useDispatch, useSelector } from 'react-redux';
 import AddTaskSection from './AddTaskSection';
 
 const Home = () => {
-    const { tasks = [] ,filteredTasks=[]} = useSelector((state) => state.taskReducer);
+    const { tasks = [], filteredTasks = [] } = useSelector((state) => state.taskReducer);
     const dispatch = useDispatch();
 
     const [activeDropdownId, setActiveDropdownId] = useState(null);
     const [editTask, setEditTask] = useState(null);
     const [editForm, setEditForm] = useState({ task_name: '', priority: 'low', id: null });
- const handleFilter = (query) => {
-    dispatch(searchTask(query));
-  };
+    const handleFilter = (query) => {
+        dispatch(searchTask(query));
+    };
 
     const handleDropdownClicked = (id, e) => {
         e.preventDefault();
@@ -20,7 +20,6 @@ const Home = () => {
     };
 
     const handleToggle = (e, id) => {
-        e.preventDefault();
         dispatch(toggleTaskStatus(id));
     };
     console.log("This is editform: ", editForm)
@@ -42,8 +41,8 @@ const Home = () => {
         const value = e.target.value;
         dispatch(sortTasks(value === "task_name" ? "task_name" : value));
     };
-    
-  const displayedTask = filteredTasks.length > 0 ? filteredTasks : tasks;
+
+    const displayedTask = filteredTasks.length > 0 ? filteredTasks : tasks;
 
     return (
         <div className='container-fluid'>
@@ -52,8 +51,8 @@ const Home = () => {
                     <h4 className='text-center p-3'>My ToDo</h4>
                     <div className='mx-2 my-4 d-flex justify-content-between align-items-center'>
                         <div className="flex-grow-1 position-relative ">
-                            <input type="text" className="custom-input w-100" placeholder="Search task" 
-                              onChange={(e) => handleFilter(e.target.value)}
+                            <input type="text" className="custom-input w-100" placeholder="Search task"
+                                onChange={(e) => handleFilter(e.target.value)}
                             />
                             <button type="button" className="btn position-absolute end-0 top-50 translate-middle-y me-2 border-0 bg-transparent search-btn">
                                 <i className="bi bi-search"></i>
@@ -81,7 +80,14 @@ const Home = () => {
                             </select>
                         </div>
                     </div>
-                    <h6 className='text-start'>Today</h6>
+                    {
+                        displayedTask.length > 0 &&
+                        <h6 className='text-start'>Today</h6>
+                    }
+                    {displayedTask == 0 &&
+                        <h6 className='text-center'>No Task Added </h6>
+                    }
+
                     {displayedTask.map((task) => (
                         <div key={task.id} className="card border-0 rounded-3 mb-3 p-2 mx-2">
                             <div className='d-flex justify-content-between align-items-center'>
@@ -131,7 +137,7 @@ const Home = () => {
                                                 <li
                                                     onClick={() => {
                                                         dispatch(removeTask(task.id));
-                                                        setActiveDropdownId(null); 
+                                                        setActiveDropdownId(null);
                                                     }}>
                                                     Remove
                                                 </li>
